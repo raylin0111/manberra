@@ -80,7 +80,7 @@ body {
 /* ================= CARRITO BOTÓN ================= */
 #toggleCarrito {
   position: relative;
-  background: #062f43;
+  background: #082d40;
   color: #fff;
   padding: 10px 18px;
   border-radius: 12px;
@@ -410,6 +410,3 @@ select,
 textarea {
   font-size: 16px !important;
 }
-
-
-
