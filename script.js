@@ -7,7 +7,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 /* ================== WHATSAPP ================== */
-const NUMERO_WHATSAPP = "18492143712"; // 👈 CAMBIA SOLO EL NÚMERO
+const NUMERO_WHATSAPP = "18293969224"; // 👈 CAMBIA SOLO EL NÚMERO
 
 /* ================== ELEMENTOS DOM ================== */
 const contenedor = document.getElementById("productos");
@@ -247,3 +247,4 @@ document.addEventListener("click", () => {
 /* ================== INIT ================== */
 await cargarProductos();
 cargarCarritoLocal();
+
