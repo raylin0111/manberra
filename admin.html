@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Autopartes</title>
+  <link rel="stylesheet" href="admin.css">
+  <meta http-equiv="Content-Security-Policy"
+content="
+default-src 'self' https://www.gstatic.com https://firestore.googleapis.com;
+script-src 'self' https://www.gstatic.com 'unsafe-inline';
+style-src 'self' 'unsafe-inline';
+img-src 'self' data: blob:;
+connect-src 'self' https://firestore.googleapis.com https://www.googleapis.com http://127.0.0.1:5500;
+">
+
+</head>
+<body>
+
+<header class="admin-header">
+  <h1>🛠 Panel de Administración</h1>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="productos">📦 Productos</button>
+  <button class="tab" data-tab="ventas">💰 Ventas</button>
+  <button class="tab" data-tab="pedidos">🧾 Pedidos</button>
+</nav>
+
+<!-- ================= PRODUCTOS ================= -->
+<section id="productos" class="tab-content active">
+
+  <div class="form-card">
+    <h2>➕ Agregar / Editar Producto</h2>
+
+    <input type="hidden" id="idProducto">
+
+    <input id="nombre" placeholder="Nombre del producto">
+    <input id="marca" placeholder="Marca">
+    <input id="categoria" placeholder="Categoría">
+    <input id="año" placeholder="Año o rango (YYYY o YYYY-YYYY)">
+    <input id="precio" type="number" placeholder="Precio">
+    <input id="stock" type="number" placeholder="Stock">
+    <input id="imagen" placeholder="Imagen (ej: bujia.png)">
+
+    <button id="guardar">Guardar producto</button>
+  </div>
+
+  <div class="lista-card">
+    <h2>📋 Productos registrados</h2>
+
+    <!-- 🔍 FILTRO (NECESARIO PARA EL JS) -->
+    <input
+      type="text"
+      id="filtroProductos"
+      placeholder="Buscar por nombre o categoría..."
+    >
+
+    <div class="tabla-scroll">
+      <table id="tablaProductos">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Categoría</th>
+            <th>Año</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="listaProductos"></tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= VENTAS ================= -->
+<section id="ventas" class="tab-content">
+
+  <div class="form-card">
+    <h2>📅 Consultar por mes</h2>
+    <input type="month" id="mesSeleccionado">
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <h3>💵 Ganancias</h3>
+      <p id="totalMes">$0</p>
+    </div>
+    <div class="stat">
+      <h3>🧾 Ventas</h3>
+      <p id="cantidadVentas">0</p>
+    </div>
+  </div>
+
+  <div class="lista-card">
+    <h2>📊 Historial de ventas</h2>
+    <div id="listaVentas"></div>
+  </div>
+
+</section>
+
+<!-- ================= PEDIDOS ================= -->
+<section id="pedidos" class="tab-content">
+
+  <div class="lista-card">
+    <h2>🧾 Pedidos de clientes</h2>
+
+    <table class="tabla-pedidos">
+  <thead>
+    <tr>
+    
+   
+    </tr>
+  </thead>
+  <tbody id="listaPedidos"></tbody>
+</table>
+
+
+  </div>
+
+</section>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>

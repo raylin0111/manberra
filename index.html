@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mamberra Auto Part</title>
+<link rel="stylesheet" href="styles.css">
+<meta http-equiv="Content-Security-Policy"
+content="
+default-src 'self' https://www.gstatic.com https://firestore.googleapis.com;
+script-src 'self' https://www.gstatic.com 'unsafe-inline';
+style-src 'self' 'unsafe-inline';
+img-src 'self' data: blob:;
+connect-src 'self' https://firestore.googleapis.com https://www.googleapis.com http://127.0.0.1:5500;
+">
+
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <img src="imagenes/logo mamberra.jpeg" alt="Mamberra Auto Part">
+    <span class="brand-name">Mamberra Auto Part</span>
+  </div>
+
+  <div class="header-right">
+    <button id="toggleCarrito">🛒  <span id="contadorCarrito"></span></button>
+
+    <div id="carritoDesplegable">
+      <div class="carrito-header">
+        <h3>🧾 Tu carrito</h3>
+        <button id="cerrarCarrito" class="cerrar-carrito">✖</button>
+      </div>
+
+      <div id="listaCarrito"></div>
+      <p id="totalCarrito">Total: $0</p>
+      <button id="btnComprar">Realizar Pedido</button>
+    </div>
+  </div>
+</header>
+
+
+<!-- BUSCADOR Y FILTROS -->
+<section class="toolbar">
+  <input type="text" id="buscarProducto" placeholder="Buscar producto...">
+
+  <select id="filtroMarca">
+    <option value="">Todas las marcas</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Honda">Honda</option>
+    <option value="kia">kia</option>
+  </select>
+
+  <select id="filtroCategoria">
+    <option value="">Todas las categorías</option>
+    <option value="bujia">Bujía</option>
+    <option value="bomper">bomper</option>
+  </select>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos"></section>
+
+<!-- MODAL -->
+<div id="modalLeerMas">
+  <div class="modal-content">
+    <div id="detalleProducto"></div>
+    <button id="cerrarModal">Cerrar</button>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
